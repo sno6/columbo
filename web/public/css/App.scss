@@ -1,0 +1,150 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    flex-direction: row;
+
+    .app {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            height: 13%;   
+            font-size: 24px;
+            font-family: 'Raleway', sans-serif;
+            letter-spacing: 2px;
+            
+            #settings {
+                margin-right: 3.5%;
+            }
+            #filler {
+                margin-left: 3.5%;
+            }
+        }
+        
+        .content-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            height: 87%;
+            background-color: rgb(40, 40, 40);
+        }
+    }
+
+    .menu {
+        width: 0%;
+        height: 100%;
+        background-color: #FFF;
+        font-family: 'Raleway', sans-serif;
+
+        .menu-header {
+            color: #BBBBBB;
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-left: 5%;
+        }
+
+        .menu-item {
+            
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            p {
+                color: #000;
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 34px;
+            height: 24px;
+        }
+
+        .switch input { display: none; }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+            border-radius: 20px;
+        }
+  
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 4px;
+            bottom: 3px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+        
+        input:focus + .slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+        
+        input:checked + .slider:before {
+            -webkit-transform: translateX(8px);
+            -ms-transform: translateX(8px);
+            transform: translateX(8px);
+        }
+    }
+}
+
+.spectrogram {
+    width: 100%;
+    height: 90%;
+    image-rendering: pixelated;
+
+    // Flip the spectrogram.
+    -moz-transform: scale(1, -1);
+    -webkit-transform: scale(1, -1);
+    -o-transform: scale(1, -1);
+    transform: scale(1, -1);
+    filter: FlipV;
+}
+
+.menu-transform {
+    transition: all 500ms ease-in;
+}
+
+.menu-transform-active {
+    width: 20% !important;
+    transform: translate(0, 3vh);
+}

@@ -1,0 +1,60 @@
+.recorder {
+    width: 130px;
+    height: 130px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #373636;
+    color: #FFF;
+    
+    &:hover {
+        background-color: #4a4949;
+        cursor: pointer;
+    }        
+}
+
+.transform {
+    // Try different variations of animations.
+    transition: all 500ms cubic-bezier(.93,.1,.42,.91);
+}
+
+.transform-active {
+    /* TODO... Check these calculations.. */
+    width: 100%;
+    height: 15vh;
+    border-radius: 0px;
+    transform: translate(0, 0vh);
+}
+
+.icon {
+    font-size: 36px !important;
+}
+
+.icon-active {
+    position: absolute;
+
+    animation: icon 1.0s forwards, icon-color linear 2s infinite;
+    -webkit-animation: icon 1.0s forwards, icon-color linear 2s infinite;
+}
+
+@-webkit-keyframes icon {
+    from {
+        right: 52%;
+    }
+    to {
+        right: 95%;
+    }
+}
+
+@-webkit-keyframes icon-color {
+    0% {
+        color: #FFF;
+    }
+    50% {
+        color: rgb(236, 85, 85);
+    }
+    100% {
+       color: #FFF;
+    }
+}
